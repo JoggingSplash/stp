@@ -11,11 +11,7 @@ trait BetterSingletonTrait {
 
     private static self $instance;
 
-    /**
-     * TODO: debugging, SingletonTrait use more performance that this
-     * this is because we are already setting the value and we dont need to ask if its null
-     * {@link SingletonTrait::getInstance()}
-     */
+    
     public static function getInstance(): self {
         return self::$instance ??= self::make();
     }
