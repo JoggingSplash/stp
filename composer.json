@@ -1,0 +1,20 @@
+{
+    "name": "cisco/stp",
+    "description": "code that i use and i dont want to write it again",
+    "type": "library",
+    "autoload": {
+        "classmap": ["src"]
+    },
+    "authors": [
+        {
+            "name": "cisco"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "virion": {
+            "spec": "0.0.1",
+            "namespace-root": "cisco\\stp"
+        }
+    }
+}
