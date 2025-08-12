@@ -28,10 +28,12 @@ final class ClosureCancelableTask extends Task {
     }
 
     public function onRun(): void {
+		if(($this->condition)()){
+			$this->getHandler()?->cancel();
+			return;
+		}
+
         ($this->closure)();
-        if(($this->condition)()){
-            $this->getHandler()?->cancel();
-        }
     }
 
     public function onCancel() : void{
