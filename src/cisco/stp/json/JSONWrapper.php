@@ -25,11 +25,12 @@ final class JSONWrapper extends \JsonException {
 	 * @throws JSONWrapper
 	 */
 	public function mustHave(mixed $key): mixed {
-		if(!isset($this->json[$key]) && !is_null($this->json[$key])) {
+		if (!array_key_exists($key, $this->json)) {
 			$this->message = "Trying to get offset of $key at " . self::class . " json=" . implode(", ", $this->json);
 			throw $this;
 		}
 
-		return $this->json[$key];
+		return $this->json[$key]; // puede ser null y está bien
 	}
+
 }
