@@ -91,9 +91,9 @@ final class JSONConfig {
 
 		$outputs = [];
 
-		foreach($this->contents as $jsonData){
+		foreach($this->contents as $key => $jsonData){
 			try{
-				$outputs[] = $objectClass::jsonDeserialize($jsonData);
+				$outputs[$key] = $objectClass::jsonDeserialize($jsonData);
 			}catch(\JsonException $e){
 				//maybe all files will be wrong, but if theres only one dont need it
 				var_dump($e->getMessage());
